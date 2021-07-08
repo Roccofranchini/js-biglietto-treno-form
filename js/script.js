@@ -51,9 +51,25 @@ buttonSubmit.addEventListener('click', function () {
         var discountMessage = 'tariffa senior';
     }
 
+
+    fullPrice = 'Euro ' + fullPrice.toFixed(2);
+
     // Codice treno 
 
-    passengerTrain = '763689RF';
+    trainNumber = '763689RF';
+
+    //Numero carrozza
+
+    carNumber = Math.floor(Math.random() * 12);
+
+
+    // stampiamo
+
+    passengerName.innerHTML = nameValue;
+    passengerTrain.innerHTML = trainNumber;
+    passengerCar.innerHTML = carNumber;
+    passengerPrice.innerHTML = fullPrice;
+    passengerDiscount.innerHTML = discountMessage;
 
 
 
