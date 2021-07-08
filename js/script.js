@@ -30,10 +30,32 @@ var passengerDiscount = document.getElementById('passenger-discount');
 
 buttonSubmit.addEventListener('click', function () {
 
+    //recuperiamo i valori del form
 
     var nameValue = formName.value;
     var kmsValue = formKms.value;
     var ageValue = formAge.value;
+
+    //calcolo il prezzo del biglietto
+
+    var fullPrice = kmsValue * 0.21;
+    var discountMessage = 'tariffa standard';
+
+    if (ageValue === 'Minorenne') {
+        fullPrice *= 0.8;
+        var discountMessage = 'tariffa junior';
+    }
+
+    if (ageValue === 'Over 65') {
+        fullPrice *= 0.6;
+        var discountMessage = 'tariffa senior';
+    }
+
+    // Codice treno 
+
+    passengerTrain = '763689RF';
+
+
 
 
 
