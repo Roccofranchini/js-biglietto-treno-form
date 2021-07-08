@@ -15,7 +15,8 @@
 var formName = document.getElementById('formname');
 var formKms = document.getElementById('formkms');
 var formAge = document.getElementById('formage');
-var buttonSubmit = document - getElementById('submit');
+var buttonSubmit = document.getElementById('submit');
+
 
 //Riferimenti Ticket
 
@@ -24,3 +25,16 @@ var passengerTrain = document.getElementById('passenger-train');
 var passengerCar = document.getElementById('passenger-car');
 var passengerPrice = document.getElementById('passenger-price');
 var passengerDiscount = document.getElementById('passenger-discount');
+
+// Bottone
+
+buttonSubmit.addEventListener('click', function () {
+
+
+    var nameValue = formName.value;
+    var kmsValue = formKms.value;
+    var ageValue = formAge.value;
+
+
+
+});
