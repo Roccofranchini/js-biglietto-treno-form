@@ -19,6 +19,7 @@ var buttonSubmit = document.getElementById('submit');
 
 
 //Riferimenti Ticket
+var ticketTitle = document.getElementById('ticket-title');
 var sectionTicket = document.getElementById('ticket');
 var passengerName = document.getElementById('passenger-name');
 var passengerTrain = document.getElementById('passenger-train');
@@ -80,6 +81,8 @@ buttonSubmit.addEventListener('click', function () {
     // mostriamo la sezione ticket
 
     sectionTicket.classList.remove('hidden');
+    ticketTitle.classList.remove('hidden');
+
 
 
 });

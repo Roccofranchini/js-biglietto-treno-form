@@ -5,43 +5,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
 
 <body>
 
+
     <!-- FORM -->
+    <header>
 
-    <div class="section" id="form">
-        <div>
-            <label for="formname">Nome del passeggero :</label>
-            <input type="text" id="formname" name="formname">
-        </div>
-        <div>
-            <label for="formkms">Distanza da percorrere (km):</label>
-            <input type="number" min="10" id="formkms" name="formkms">
-        </div>
-        <div>
-            <label for="formage">Fascia d'età</label>
-            <select name="" id="formage">
-                <option value="mag">Maggiorenne</option>
-                <option value="min">Minorenne</option>
-                <option value="over">Over 65</option>
-            </select>
-        </div>
-        <div>
-            <button id="submit">Invia</button>
-        </div>
-    </div>
+    </header>
 
-    <section id="ticket" class="hidden">
-        <p><strong>Nome del passeggero: </strong><span id="passenger-name"></span> </p>
-        <p><strong>Codice treno: </strong><span id="passenger-train"></span> </p>
-        <p><strong>Numero carrozza: </strong><span id="passenger-car"></span> </p>
-        <p><strong>Prezzo: </strong><span id="passenger-price"></span> </p>
-        <p><strong>Tariffa applicata: </strong><span id="passenger-discount"></span> </p>
-    </section>
+    <main>
+
+        <h1 class="text-center text-white my-4">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+
+        <div class="container">
+            <section class="bg-white text-center p-3" id="form">
+                <div class="row">
+                    <div class="col">
+                        <label class="d-block" for="formname">Nome del passeggero :</label>
+                        <input type="text" id="formname" name="formname" class="m-3 rounded-3 border-2 border-danger">
+                    </div>
+                    <div class="col">
+                        <label class="d-block" for="formkms">Distanza da percorrere (km):</label>
+                        <input type="number" min="10" id="formkms" name="formkms"
+                            class="m-3 rounded-3 border-2 border-danger">
+                    </div>
+                    <div class="col">
+                        <label class="d-block" for="formage">Fascia d'età</label>
+                        <select name="" id="formage" class="m-3 rounded-3 border-2 border-danger">
+                            <option value="mag">Maggiorenne</option>
+                            <option value="min">Minorenne</option>
+                            <option value="over">Over 65</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <button id="submit" class="m-3 rounded-3 text-danger fw-bold border-danger p-1">Invia</button>
+                </div>
+            </section>
+        </div>
+        <!-- TICKET -->
+
+        <h2 class="text-center text-white my-4 hidden" id="ticket-title">IL TUO BIGLIETTO</h2>
+
+        <div class="container">
+            <section id="ticket" class="hidden bg-white p-5 my-4">
+
+                <h6 class="mb-3">DETTAGLIO PASSEGGERI</h6>
+
+                <div class="row ticket-details border border-1">
+                    <div class="col-12 col-md-3 col-lg-4 bg-black-50">
+                        <p><strong>Nome del passeggero: </strong><span id="passenger-name"></span> </p>
+                    </div>
+                    <div class="col-12 col-md-2 col-lg-2">
+                        <p><strong>Treno: </strong><span id="passenger-train"></span> </p>
+                    </div>
+                    <div class="col-12 col-md-2 col-lg-2">
+                        <p><strong>Carrozza: </strong><span id="passenger-car"></span> </p>
+                    </div>
+                    <div class="col-12 col-md-2 col-lg-2">
+                        <p><strong>Prezzo: </strong><span id="passenger-price"></span> </p>
+                    </div>
+                    <div class="col-12 col-md-2 col-lg-2">
+                        <p><strong>Tariffa: </strong><span id="passenger-discount"></span> </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 
     <script src="./js/script.js"></script>
 </body>
