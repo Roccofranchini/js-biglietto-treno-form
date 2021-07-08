@@ -19,7 +19,7 @@ var buttonSubmit = document.getElementById('submit');
 
 
 //Riferimenti Ticket
-
+var sectionTicket = document.getElementById('ticket');
 var passengerName = document.getElementById('passenger-name');
 var passengerTrain = document.getElementById('passenger-train');
 var passengerCar = document.getElementById('passenger-car');
@@ -71,8 +71,15 @@ buttonSubmit.addEventListener('click', function () {
     passengerPrice.innerHTML = fullPrice;
     passengerDiscount.innerHTML = discountMessage;
 
+    // riazzero i campi
 
+    formName.value = '';
+    formKms.value = '';
+    formAge.value = 'mag';
 
+    // mostriamo la sezione ticket
+
+    sectionTicket.classList.remove('hidden');
 
 
 });

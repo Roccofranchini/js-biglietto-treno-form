@@ -20,14 +20,14 @@
         </div>
         <div>
             <label for="formkms">Distanza da percorrere (km):</label>
-            <input type="text" id="formkms" name="formkms">
+            <input type="number" min="10" id="formkms" name="formkms">
         </div>
         <div>
             <label for="formage">Fascia d'età</label>
             <select name="" id="formage">
-                <option>Minorenne</option>
-                <option>Maggiorenne</option>
-                <option>Over 65</option>
+                <option value="mag">Maggiorenne</option>
+                <option value="min">Minorenne</option>
+                <option value="over">Over 65</option>
             </select>
         </div>
         <div>
@@ -35,7 +35,7 @@
         </div>
     </div>
 
-    <section id="ticket">
+    <section id="ticket" class="hidden">
         <p><strong>Nome del passeggero: </strong><span id="passenger-name"></span> </p>
         <p><strong>Codice treno: </strong><span id="passenger-train"></span> </p>
         <p><strong>Numero carrozza: </strong><span id="passenger-car"></span> </p>
