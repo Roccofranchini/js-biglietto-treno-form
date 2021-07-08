@@ -14,9 +14,34 @@
     <!-- FORM -->
 
     <div class="section" id="form">
-        <label for="traveler-name"></label>
-        <input type="text" id="travelerName" name="traveler-name">
+        <div>
+            <label for="formname">Nome del passeggero :</label>
+            <input type="text" id="formname" name="formname">
+        </div>
+        <div>
+            <label for="formkms">Distanza da percorrere (km):</label>
+            <input type="text" id="formkms" name="formkms">
+        </div>
+        <div>
+            <label for="formage">Fascia d'età</label>
+            <select name="" id="formage">
+                <option>Minorenne</option>
+                <option>Maggiorenne</option>
+                <option>Over 65</option>
+            </select>
+        </div>
+        <div>
+            <button id="submit">Invia</button>
+        </div>
     </div>
+
+    <section id="ticket">
+        <p><strong>Nome del passeggero: <span id="passenger-name"></span> </strong></p>
+        <p id="passenger-train"><strong>Codice treno: <span id="passenger-train"></span> </strong></p>
+        <p><strong>Numero carrozza: <span id="passenger-car"></span> </strong></p>
+        <p><strong>Prezzo: <span id="passenger-price"></span> </strong></p>
+        <p><strong>Tariffa applicata: <span id="passenger-discount"></span> </strong></p>
+    </section>
 
     <script src="./js/script.js"></script>
 </body>
