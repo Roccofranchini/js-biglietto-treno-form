@@ -61,7 +61,7 @@ buttonSubmit.addEventListener('click', function () {
 
     //Numero carrozza
 
-    carNumber = Math.floor(Math.random() * 12);
+    carNumber = Math.floor(Math.random() * 12) + 1;
 
 
     // stampiamo
