@@ -26,17 +26,20 @@
 
         <div class="container">
             <section class="bg-white text-center p-3" id="form">
+                <div class="alert alert-danger d-none" role="alert" id="alert-error">
+                    Alcuni dei dati inseriti non sono corretti!
+                </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col-12 col-md-4">
                         <label class="d-block" for="formname">Nome del passeggero :</label>
                         <input type="text" id="formname" name="formname" class="m-3 rounded-3 border-2 border-danger">
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-md-4">
                         <label class="d-block" for="formkms">Distanza da percorrere (km):</label>
-                        <input type="number" min="10" id="formkms" name="formkms"
+                        <input type="number" min="10" id="formkms" name="formkms" value="10"
                             class="m-3 rounded-3 border-2 border-danger">
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-md-4">
                         <label class="d-block" for="formage">Fascia d'età</label>
                         <select name="" id="formage" class="m-3 rounded-3 border-2 border-danger">
                             <option value="mag">Maggiorenne</option>
@@ -47,6 +50,7 @@
                 </div>
                 <div>
                     <button id="submit" class="m-3 rounded-3 text-danger fw-bold border-danger p-1">Invia</button>
+                    <button id="reset" class="m-3 rounded-3 text-danger fw-bold border-danger p-1">Reset</button>
                 </div>
             </section>
         </div>

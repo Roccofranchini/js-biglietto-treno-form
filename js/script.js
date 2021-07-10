@@ -16,6 +16,8 @@ var formName = document.getElementById('formname');
 var formKms = document.getElementById('formkms');
 var formAge = document.getElementById('formage');
 var buttonSubmit = document.getElementById('submit');
+var buttonReset = document.getElementById('reset');
+var alertError = document.getElementById('alert-error');
 
 
 //Riferimenti Ticket
@@ -37,52 +39,82 @@ buttonSubmit.addEventListener('click', function () {
     var kmsValue = formKms.value;
     var ageValue = formAge.value;
 
-    //calcolo il prezzo del biglietto
 
-    var fullPrice = kmsValue * 0.21;
-    var discountMessage = 'tariffa standard';
+    if (!nameValue || nameValue.trim() === '' || !isNaN(nameValue) || !kmsValue || kmsValue.trim() === '' || isNaN(kmsValue) || kmsValue < 10) {
 
-    if (ageValue === 'Minorenne') {
-        fullPrice *= 0.8;
-        var discountMessage = 'tariffa junior';
+        alertError.classList.remove('d-none');
+
     }
 
-    if (ageValue === 'Over 65') {
-        fullPrice *= 0.6;
-        var discountMessage = 'tariffa senior';
+    else {
+
+
+
+        //calcolo il prezzo del biglietto
+
+        var fullPrice = kmsValue * 0.21;
+        var discountMessage = 'tariffa standard';
+
+        if (ageValue === 'Minorenne') {
+            fullPrice *= 0.8;
+            var discountMessage = 'tariffa junior';
+        }
+
+        if (ageValue === 'Over 65') {
+            fullPrice *= 0.6;
+            var discountMessage = 'tariffa senior';
+        }
+
+
+        fullPrice = 'Euro ' + fullPrice.toFixed(2);
+
+        // Codice treno 
+
+        trainNumber = '763689RF';
+
+        //Numero carrozza
+
+        carNumber = Math.floor(Math.random() * 12) + 1;
+
+
+        // stampiamo
+
+        passengerName.innerHTML = nameValue;
+        passengerTrain.innerHTML = trainNumber;
+        passengerCar.innerHTML = carNumber;
+        passengerPrice.innerHTML = fullPrice;
+        passengerDiscount.innerHTML = discountMessage;
+
+        // riazzero i campi
+
+        formName.value = '';
+        formKms.value = '10';
+        formAge.value = 'mag';
+
+        // mostriamo la sezione ticket
+
+        sectionTicket.classList.remove('hidden');
+        ticketTitle.classList.remove('hidden');
+
+
     }
-
-
-    fullPrice = 'Euro ' + fullPrice.toFixed(2);
-
-    // Codice treno 
-
-    trainNumber = '763689RF';
-
-    //Numero carrozza
-
-    carNumber = Math.floor(Math.random() * 12) + 1;
-
-
-    // stampiamo
-
-    passengerName.innerHTML = nameValue;
-    passengerTrain.innerHTML = trainNumber;
-    passengerCar.innerHTML = carNumber;
-    passengerPrice.innerHTML = fullPrice;
-    passengerDiscount.innerHTML = discountMessage;
-
-    // riazzero i campi
-
-    formName.value = '';
-    formKms.value = '';
-    formAge.value = 'mag';
-
-    // mostriamo la sezione ticket
-
-    sectionTicket.classList.remove('hidden');
-    ticketTitle.classList.remove('hidden');
-
-
 
 });
+
+// bottone Reset
+
+buttonReset.addEventListener('click', function () {
+
+    //nascondiamo la sezione
+
+    sectionTicket.classList.add('hidden');
+    ticketTitle.classList.add('hidden');
+
+    //resettiamo il form
+
+    formName.value = '';
+    formKms.value = '10';
+    formAge.value = 'mag';
+
+
+})
