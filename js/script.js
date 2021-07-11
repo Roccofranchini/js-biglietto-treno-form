@@ -18,6 +18,7 @@ var formAge = document.getElementById('formage');
 var buttonSubmit = document.getElementById('submit');
 var buttonReset = document.getElementById('reset');
 var alertError = document.getElementById('alert-error');
+var closeAlertError = document.getElementById('close-alert-error');
 
 
 //Riferimenti Ticket
@@ -48,7 +49,9 @@ buttonSubmit.addEventListener('click', function () {
 
     else {
 
+        // rimuovo l'alert
 
+        alertError.classList.add('d-none');
 
         //calcolo il prezzo del biglietto
 
@@ -116,5 +119,13 @@ buttonReset.addEventListener('click', function () {
     formKms.value = '10';
     formAge.value = 'mag';
 
+
+})
+
+// per chiudere l'alert
+
+closeAlertError.addEventListener('click', function () {
+
+    alertError.classList.add('d-none');
 
 })

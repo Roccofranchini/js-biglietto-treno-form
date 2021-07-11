@@ -17,3 +17,7 @@ body {
 .hidden {
     display: none;
 }
+
+#close-alert-error {
+    cursor: pointer;
+}
